@@ -11,6 +11,7 @@
 #define RAISE 2
 #define FUNCS 3
 #define SPECL 4
+#define CONFG 5
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
@@ -95,9 +96,19 @@
                         display-name = "SPECL";
                         bindings = <
 /*      --------------------,--------------------,--------------------,--------------------,--------------------,--------------------,--------------------,--------------------,--------------------,--------------------,--------------------,--------------------,--------------------,--------------------,--------------------,--------------------,--------------------,-------------------- */
-        &kp C_VOL_UP         &kp LC(LS(LG(DOWN))) &kp LC(LG(UP))       &kp LC(LS(LG(UP)))   &trans               &trans                                                                                                                        &trans               &bt BT_SEL 3         &bt BT_SEL 4         &bt BT_SEL 5         &trans               &bt BT_CLR
-        &kp C_VOL_DN         &kp LC(LG(LEFT))     &kp LC(LG(DOWN))     &kp LC(LG(RIGHT))    &trans               &trans                                                                                                                        &trans               &bt BT_SEL 0         &bt BT_SEL 1         &bt BT_SEL 2         &trans               &bt BT_NXT
-        &kp C_MUTE           &trans               &trans               &trans               &trans               &trans               &trans               &trans                                    &trans               &trans               &trans               &trans               &trans               &trans               &trans               &bt BT_PRV
+        &kp C_VOL_UP         &kp LC(LS(LG(DOWN))) &kp LC(LG(UP))       &kp LC(LS(LG(UP)))   &trans               &trans                                                                                                                        &trans               &bt BT_SEL 3         &bt BT_SEL 4         &bt BT_SEL 5         &trans               &trans
+        &kp C_VOL_DN         &kp LC(LG(LEFT))     &kp LC(LG(DOWN))     &kp LC(LG(RIGHT))    &trans               &trans                                                                                                                        &trans               &bt BT_SEL 0         &bt BT_SEL 1         &bt BT_SEL 2         &trans               &trans
+        &kp C_MUTE           &trans               &trans               &trans               &trans               &trans               &trans               &trans                                    &trans               &trans               &trans               &trans               &trans               &trans               &trans               &trans
+                                                                       &trans               &trans               &trans               &trans               &trans                                    &trans               &trans               &bt BT_CLR           &trans               &trans
+                        >;
+                };
+                configs {
+                        display-name = "CONFG";
+                        bindings = <
+/*      --------------------,--------------------,--------------------,--------------------,--------------------,--------------------,--------------------,--------------------,--------------------,--------------------,--------------------,--------------------,--------------------,--------------------,--------------------,--------------------,--------------------,-------------------- */
+        &trans               &trans               &trans               &trans               &trans               &trans                                                                                                                        &trans               &trans               &trans               &trans               &trans               &trans
+        &trans               &trans               &trans               &trans               &trans               &trans                                                                                                                        &trans               &trans               &trans               &trans               &trans               &trans
+        &trans               &trans               &trans               &trans               &trans               &trans               &trans               &trans                                    &trans               &trans               &trans               &trans               &trans               &trans               &trans               &trans
                                                                        &trans               &trans               &trans               &trans               &trans                                    &trans               &trans               &trans               &trans               &trans
                         >;
                 };
