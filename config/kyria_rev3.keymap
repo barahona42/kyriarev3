@@ -44,9 +44,13 @@
 
         conditional_layers {
                 compatible = "zmk,conditional-layers";
-                tri_layer {
+                specials_layer {
                         if-layers = <RAISE FUNCS>;
                         then-layer = <SPECL>;
+                };
+                configs_layer = {
+                        if-layers = <LOWER RAISE>;
+                        then-layer = <CONFG>;
                 };
         };
 
@@ -58,8 +62,8 @@
 /*      --------------------,--------------------,--------------------,--------------------,--------------------,--------------------,--------------------,--------------------,--------------------,--------------------,--------------------,--------------------,--------------------,--------------------,--------------------,--------------------,--------------------,-------------------- */
         &kp TAB              &kp Q                &kp W                &kp E                &kp R                &kp T                                                                                                                         &kp Y                &kp U                &kp I                &kp O                &kp P                &kp BSPC
         &kp ESC              &kp A                &hm LCTRL S          &hm LALT D           &hm LGUI F           &kp G                                                                                                                         &kp H                &hm RGUI J           &hm RALT K           &hm RCTRL L          &kp SEMI             &kp SQT
-        &kp LSHFT            &kp Z                &kp X                &kp C                &kp V                &kp B                &trans               &trans                                    &trans               &trans               &kp N                &kp M                &kp COMMA            &kp DOT              &kp FSLH             &kp ENTER
-                                                                       &trans               &kp LSHFT            &lt LOWER SPACE      &mo RAISE            &trans                                    &trans               &mo FUNCS            &lt RAISE SPACE      &kp RSHFT            &trans
+        &kp LSHFT            &kp Z                &kp X                &kp C                &kp V                &kp B                &kp CAPS             &trans                                    &trans               &trans               &kp N                &kp M                &kp COMMA            &kp DOT              &kp FSLH             &kp ENTER
+                                                                       &kp UNDER            &kp LSHFT            &lt LOWER SPACE      &mo RAISE            &trans                                    &trans               &mo FUNCS            &lt RAISE SPACE      &kp RSHFT            &kp MINUS
                         >;
                 };
                 lower {
@@ -98,17 +102,17 @@
 /*      --------------------,--------------------,--------------------,--------------------,--------------------,--------------------,--------------------,--------------------,--------------------,--------------------,--------------------,--------------------,--------------------,--------------------,--------------------,--------------------,--------------------,-------------------- */
         &kp C_VOL_UP         &kp LC(LS(LG(DOWN))) &kp LC(LG(UP))       &kp LC(LS(LG(UP)))   &trans               &trans                                                                                                                        &trans               &bt BT_SEL 3         &bt BT_SEL 4         &bt BT_SEL 5         &trans               &trans
         &kp C_VOL_DN         &kp LC(LG(LEFT))     &kp LC(LG(DOWN))     &kp LC(LG(RIGHT))    &trans               &trans                                                                                                                        &trans               &bt BT_SEL 0         &bt BT_SEL 1         &bt BT_SEL 2         &trans               &trans
-        &kp C_MUTE           &trans               &trans               &trans               &trans               &trans               &trans               &bootloader                               &bootloader          &trans               &trans               &trans               &trans               &trans               &trans               &trans
-                                                                       &trans               &trans               &trans               &trans               &sys_reset                                &sys_reset           &trans               &bt BT_CLR           &trans               &trans
+        &kp C_MUTE           &trans               &trans               &trans               &trans               &trans               &trans               &trans                                    &trans               &trans               &trans               &trans               &trans               &trans               &trans               &trans
+                                                                       &trans               &trans               &trans               &trans               &trans                                    &trans               &trans               &trans               &trans               &trans
                         >;
                 };
                 configs {
                         display-name = "CONFG";
                         bindings = <
 /*      --------------------,--------------------,--------------------,--------------------,--------------------,--------------------,--------------------,--------------------,--------------------,--------------------,--------------------,--------------------,--------------------,--------------------,--------------------,--------------------,--------------------,-------------------- */
-        &trans               &trans               &trans               &trans               &trans               &trans                                                                                                                        &trans               &trans               &trans               &trans               &trans               &trans
-        &trans               &trans               &trans               &trans               &trans               &trans                                                                                                                        &trans               &trans               &trans               &trans               &trans               &trans
-        &trans               &trans               &trans               &trans               &trans               &trans               &trans               &trans                                    &trans               &trans               &trans               &trans               &trans               &trans               &trans               &trans
+        &bootloader          &trans               &trans               &trans               &trans               &trans                                                                                                                        &trans               &trans               &trans               &trans               &trans               &bootloader
+        &sys_reset           &trans               &trans               &trans               &trans               &trans                                                                                                                        &trans               &trans               &trans               &trans               &trans               &sys_reset
+        &bt BT_CLR           &trans               &trans               &trans               &trans               &trans               &trans               &trans                                    &trans               &trans               &trans               &trans               &trans               &trans               &trans               &trans
                                                                        &trans               &trans               &trans               &trans               &trans                                    &trans               &trans               &trans               &trans               &trans
                         >;
                 };
