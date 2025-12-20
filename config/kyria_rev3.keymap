@@ -48,7 +48,7 @@
                         if-layers = <RAISE FUNCS>;
                         then-layer = <SPECL>;
                 };
-                configs_layer = {
+                configs_layer {
                         if-layers = <LOWER RAISE>;
                         then-layer = <CONFG>;
                 };
